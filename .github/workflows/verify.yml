@@ -10,7 +10,6 @@ jobs:
   verify:
     env:
       GOPATH: /go/src/github.com/asvoboda/golangtest
-      working-directory: /go/src/github.com/asvoboda/golangtest
     name: Verify
     runs-on: ubuntu-latest
 

@@ -9,7 +9,7 @@ on:
 jobs:
   publish:
     env:
-      working-directory: /go/src/github.com/asvoboda/golangtest
+      GOPATH: /go/src/github.com/asvoboda/golangtest
     name: Publish
     runs-on: ubuntu-latest
 

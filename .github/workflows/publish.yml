@@ -28,14 +28,16 @@ jobs:
     - name: Publish Snapshot
       if: ${{ github.ref == 'refs/heads/develop' }}
       run: |
-           docker login -u ${{secrets.DOCKERHUB_USERNAME}} -p ${{secrets.DOCKERHUB_PASSWORD}}
-           ./godelw docker push --tags=snapshot
+           echo "noop"
+           # docker login -u ${{secrets.DOCKERHUB_USERNAME}} -p ${{secrets.DOCKERHUB_PASSWORD}}
+           # ./godelw docker push --tags=snapshot
 
     - name: Publish Release
       if: startsWith( github.ref, 'refs/tags/')
       run: |
-           docker login -u ${{secrets.DOCKERHUB_USERNAME}} -p ${{secrets.DOCKERHUB_PASSWORD}}
-           ./godelw docker push --tags=latest,version
+           echo "noop"
+           # docker login -u ${{secrets.DOCKERHUB_USERNAME}} -p ${{secrets.DOCKERHUB_PASSWORD}}
+           # ./godelw docker push --tags=latest,version
            ./godelw publish github \
                --api-url "$GITHUB_API_URL" \
                --token "$GITHUB_TOKEN" \

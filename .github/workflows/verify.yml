@@ -8,6 +8,8 @@ on:
 
 jobs:
   verify:
+    env:
+      working-directory: /go/src/github.com/asvoboda/golangtest
     name: Verify
     runs-on: ubuntu-latest
 

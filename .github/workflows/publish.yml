@@ -39,7 +39,8 @@ jobs:
            # docker login -u ${{secrets.DOCKERHUB_USERNAME}} -p ${{secrets.DOCKERHUB_PASSWORD}}
            # ./godelw docker push --tags=latest,version
            ./godelw publish github \
+               --user "noop" \
                --api-url "$GITHUB_API_URL" \
-               --token "$GITHUB_TOKEN" \
+               --token ${{secrets.GITHUB_TOKEN}} \
                --owner asvoboda \
                --repository golangtest

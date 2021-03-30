@@ -31,18 +31,15 @@ jobs:
 
     - name: Test
       run: |
-          echo $GOPATH
           pwd
           go test -v
 
     - name: Test
       run: |
-          echo $GOPATH
           pwd
           ./godelw verify --apply=false
 
     - name: build
       run: |
-          echo $GOPATH
           pwd
           ./godelw docker build --verbose

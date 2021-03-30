@@ -12,6 +12,9 @@ jobs:
       GOPATH: /go/src/github.com/asvoboda/golangtest
     name: Verify
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: /go/src/github.com/asvoboda/golangtest
 
     strategy:
       matrix:
@@ -37,3 +40,9 @@ jobs:
           echo $GOPATH
           pwd
           ./godelw verify --apply=false
+
+    - name: build
+      run: |
+          echo $GOPATH
+          pwd
+          ./godelw docker build --verbose

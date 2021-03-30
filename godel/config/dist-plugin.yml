@@ -1,0 +1,32 @@
+product-defaults:
+  publish:
+    group-id: org.asvoboda.golangtest
+
+products:
+  golangtest:
+    build:
+      output-dir: build
+      main-pkg: .
+      environment:
+        CGO_ENABLED: "0"
+      os-archs:
+      - os: linux
+        arch: amd64
+    dist:
+      output-dir: build
+      disters:
+        bin:
+          type: bin
+    docker:
+      docker-builders:
+        golangtest:
+          type: default
+          context-dir: build/docker
+          dockerfile-path: Dockerfile
+          input-products-dir: .
+          tag-templates:
+            version: "{{Repository}}asvoboda/golangtest:{{Version}}"
+            latest: "{{Repository}}asvoboda/golangtest:latest"
+            snapshot: "{{Repository}}asvoboda/golangtest:snapshot"
+    publish:
+      group-id: org.asvoboda.golangtest

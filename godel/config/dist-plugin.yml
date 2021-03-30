@@ -24,6 +24,9 @@ products:
           context-dir: build/docker
           dockerfile-path: Dockerfile
           input-products-dir: .
+          script: |
+            #!/usr/bin/env bash
+            cp -R docker/* ${CONTEXT_DIR}
           tag-templates:
             version: "{{Repository}}asvoboda/golangtest:{{Version}}"
             latest: "{{Repository}}asvoboda/golangtest:latest"

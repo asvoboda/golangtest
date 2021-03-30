@@ -25,4 +25,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Test
+      run: go test -v
+
+    - name: Test
       run: ./godelw verify --apply=false --junit-output="$TESTS_DIR/$CIRCLE_PROJECT_REPONAME-tests.xml"

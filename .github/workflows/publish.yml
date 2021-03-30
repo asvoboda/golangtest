@@ -39,6 +39,7 @@ jobs:
            # docker login -u ${{secrets.DOCKERHUB_USERNAME}} -p ${{secrets.DOCKERHUB_PASSWORD}}
            # ./godelw docker push --tags=latest,version
            ./godelw publish github \
+               --add-v-prefix \
                --user "noop" \
                --api-url "$GITHUB_API_URL" \
                --token ${{secrets.GITHUB_TOKEN}} \

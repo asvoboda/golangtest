@@ -27,11 +27,11 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Test
-      run:|
-        echo $GOPATH
-        go test -v
+      run: |
+          echo $GOPATH
+          go test -v
 
     - name: Test
-      run:|
-        echo $GOPATH
-        ./godelw verify --apply=false
+      run: |
+          echo $GOPATH
+          ./godelw verify --apply=false
